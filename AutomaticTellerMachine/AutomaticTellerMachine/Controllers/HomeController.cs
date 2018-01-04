@@ -8,8 +8,11 @@ namespace AutomaticTellerMachine.Controllers
 {
     public class HomeController : Controller
     {
+        //GET /home/index
+        [MyLoggingFilter]
         public ActionResult Index()
         {
+            throw new StackOverflowException();
             return View(); //when view is called without parameters, its going to look for the view whose name matches the class method name
             //and since in the homecontroller, will look for home in the views for the cshtml file
         }
@@ -20,7 +23,7 @@ namespace AutomaticTellerMachine.Controllers
         {
             ViewBag.Message = "Your application description page.";
 
-            return View();
+            return View("About"); //now this view is going to look in the views/home/about.cshtml
         }
 
         public ActionResult Contact()
