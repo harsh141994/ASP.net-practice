@@ -12,9 +12,7 @@ namespace AutomaticTellerMachine.Controllers
         [MyLoggingFilter]
         public ActionResult Index()
         {
-            throw new StackOverflowException();
-            return View(); //when view is called without parameters, its going to look for the view whose name matches the class method name
-            //and since in the homecontroller, will look for home in the views for the cshtml file
+           return View();
         }
 
         //GET /home/about
@@ -23,7 +21,7 @@ namespace AutomaticTellerMachine.Controllers
         {
             ViewBag.Message = "Your application description page.";
 
-            return View("About"); //now this view is going to look in the views/home/about.cshtml
+            return View("About");
         }
 
         public ActionResult Contact()
@@ -53,8 +51,6 @@ namespace AutomaticTellerMachine.Controllers
             {
                 return Content(serial.ToLower());
             }
-            //return Content(serial);
-            //return Json(new { name = "serial", value = serial }, JsonRequestBehavior.AllowGet);
             return RedirectToAction("Index");
         }
     }
