@@ -16,7 +16,7 @@ namespace AutomaticTellerMachine.Controllers
         }
 
         //GET /home/about
-        [ActionName("about-this-atm")]
+        //[ActionName("about-this-atm")]
         public ActionResult About()
         {
             ViewBag.Message = "Your application description page.";
